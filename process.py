@@ -37,20 +37,14 @@ def limpar_pasta(pasta):
                 print(f"Erro ao limpar {arquivo}: {e}")
 
 def criar_diretorios():
-    """Cria os diretórios necessários limpando os existentes"""
-    # Criar diretório base de saída se não existir
-    os.makedirs(BASE_OUTPUT_DIR, exist_ok=True)
-    
-    # Limpar diretórios existentes
-    limpar_pasta(OUTPUT_DIR)
-    limpar_pasta(SUSPECT_DIR)
-    limpar_pasta(LOG_DIR)
-    
-    # Criar diretórios
+    """Cria os diretórios necessários se não existirem"""
+    # Criar diretórios necessários
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(LOG_DIR, exist_ok=True)
     if GUARDAR_SUSPEITAS:
         os.makedirs(SUSPECT_DIR, exist_ok=True)
+    
+    print(f"Diretórios prontos em: {BASE_OUTPUT_DIR}/{hoje}/")
 
 # Inicializar diretórios
 criar_diretorios()
