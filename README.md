@@ -1,27 +1,39 @@
-# CallSplitter-Cleaner
+# CallSplitter-Cleaner v2.1
 
-Sistema para processar gravações longas de chamadas (ex: 4h), dividir automaticamente por chamadas, limpar o áudio e preparar para transcrição.
+Processa ficheiros `.mp3` longos (ex: 4h), divide com base em silêncio e **guarda apenas as chamadas reais**, com base na forma como o Vitor fala.
+
+---
 
 ## 🚀 Funcionalidades
-- Conversão automática para WAV (mono, 16kHz)
-- Deteção de silêncio prolongado (ex: >10s) para separar chamadas
-- Exportação de chamadas como `call_001.wav`, `call_002.wav`...
-- Preparação para integração com Whisper ou outro sistema de transcrição
+
+- 📤 Divide gravações por silêncio (>10s)
+- 🧠 Usa Whisper para transcrever cada segmento
+- ✅ Guarda apenas as chamadas que:
+  - contêm `"posso ser útil"`
+  - e `"bom dia"` ou `"boa noite"`
+  - e `"está a falar com"` ou `"sou o vitor"`
+- 📝 Cria `.log` com a transcrição e duração de cada chamada
+
+---
 
 ## 📁 Estrutura
-- `input/`: colocar aqui os `.mp3` ou `.wav` longos
-- `output/calls/`: chamadas divididas e limpas
-- `output/logs/`: logs e informações técnicas por chamada
 
-## 🧪 Requisitos
+```
+CallSplitter-Cleaner/
+├── input/             # coloca aqui os teus .mp3
+├── output/
+│   ├── calls/        # onde ficam as chamadas reais
+│   └── logs/         # onde ficam os .log de cada chamada
+├── process.py        # script principal (v2.1 com Whisper)
+├── README.md        # este ficheiro
+└── venv/            # ambiente virtual (opcional)
+```
+
+## 🛠️ Requisitos
+
 - Python 3.9+
-- Instalar dependências:
-```bash
-pip install pydub ffmpeg-python
-```
+- ffmpeg (para processamento de áudio)
+- Whisper (para transcrição)
 
-## ▶️ Como usar
-```bash
-python process.py
-```
+### Instalação
 
