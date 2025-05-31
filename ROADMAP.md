@@ -4,15 +4,23 @@ Este ficheiro serve como guia técnico para o desenvolvimento contínuo do proje
 
 ---
 
-## ✅ Fase Atual (v3.x)
-**Objetivo:** Filtrar chamadas reais com base em padrões de fala e melhorar a estrutura do pipeline.
+## ✅ Fase Atual (v4.0)
+**Objetivo:** Processamento robusto de lote com configuração flexível e tratamento de erros aprimorado.
+
+### 🚀 Novas Funcionalidades
+- [x] Configuração via linha de comando (argparse)
+- [x] Caminhos personalizáveis (input/output/logs)
+- [x] Detecção de silêncio ajustável
+- [x] Tratamento de erros robusto
+- [x] Nomeação de arquivos sem colisão
+- [x] Logs estruturados (arquivo + console)
 
 ### 🔧 Funcionalidades implementadas
 - [x] Divisão de áudio por silêncio
 - [x] Transcrição com Whisper (modelo base)
 - [x] Filtro por frases-chave ("posso ser útil", etc.)
 - [x] Sistema de pontuação e confiança
-- [x] Logs por chamada
+- [x] Logs detalhados por chamada
 - [x] Armazenamento opcional de suspeitas
 
 ---
@@ -30,23 +38,32 @@ Criar regras mais robustas baseadas nas chamadas reais do Vitor Varela.
 
 ---
 
-## 🔄 Refatoração e Performance (Parcialmente Concluído)
+## 🔄 Refatoração e Performance (Concluído v4.0)
 
-### 📌 Tarefas
-- [x] Processamento por blocos (implementado com divisão por silêncio)
+### ✅ Melhorias Implementadas
+- [x] Processamento por blocos otimizado
+- [x] Sistema de logging unificado (arquivo + console)
+- [x] Tratamento de erros robusto
+- [x] Exportação de relatórios em .json
+- [x] Verificação de dependências (FFmpeg)
+
+### 📊 Próximas Melhorias
 - [ ] Barra de progresso no terminal
-- [x] Logging de tempo e consumo de recursos (logs básicos implementados)
-- [x] Exportar relatórios por ficheiro (.json) (implementado em v3.0)
+- [ ] Estatísticas de desempenho detalhadas
 
 ---
 
-## 📦 Fase de Lote e Automação
+## 📦 Fase de Lote e Automação (Concluído v4.0)
 
-### 📌 Tarefas
-- [x] Processar pastas com 30+ ficheiros automaticamente (implementado em v3.0)
-- [x] Suporte a múltiplos formatos (.wav, .mp3) (implementado em v3.0)
-- [ ] Remoção de duplicados ou ficheiros inválidos
-- [x] Exportar estatísticas gerais em `.csv` ou `.json` (logs em .json implementados)
+### ✅ Funcionalidades Implementadas
+- [x] Processamento em lote de múltiplos formatos
+- [x] Nomeação automática sem colisão
+- [x] Logs estruturados e arquivados
+- [x] Exportação de estatísticas em .json
+
+### 🔍 Próximos Passos
+- [ ] Detecção automática de duplicados
+- [ ] Processamento incremental (apenas novos arquivos)
 
 ---
 
